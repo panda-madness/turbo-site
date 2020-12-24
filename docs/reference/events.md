@@ -10,6 +10,8 @@ Turbo emits events that allow you to track the navigation lifecycle and respond 
 
 (Note that when using jQuery, the data on the event must be accessed as `$event.originalEvent.detail`.)
 
+## Turbo Drive
+
 * `turbo:click` fires when you click a Turbo-enabled link. The clicked element is the event target. Access the requested location with `event.detail.url`. Cancel this event to let the click fall through to the browser as normal navigation.
 
 * `turbo:before-visit` fires before visiting a location, except when navigating by history. Access the requested location with `event.detail.url`. Cancel this event to prevent navigation.
@@ -31,3 +33,7 @@ Turbo emits events that allow you to track the navigation lifecycle and respond 
 * `turbo:render` fires after Turbo renders the page. This event fires twice during an application visit to a cached location: once after rendering the cached version, and again after rendering the fresh version.
 
 * `turbo:load` fires once after the initial page load, and again after every Turbo visit. Access visit timing metrics with the `event.detail.timing` object.
+
+## Turbo Stream
+
+* `turbo:before-stream-render` fires once before a `turbo-stream` element performs it's action. You can access the stream element via `event.target`. Cancel this event to prevent the action. 
